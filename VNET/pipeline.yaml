@@ -50,11 +50,13 @@ stages:
             inputs:
               provider: 'azurerm'
               command: 'init'
+              commandOptions: 'reconfigure'
               backendServiceArm: 'MYFIRSTSERVICECONNECTION'
               backendAzureRmResourceGroupName: '$(bkstrgrg)'
               backendAzureRmStorageAccountName: '$(bkstrg)'
               backendAzureRmContainerName: '$(bkcontainer)'
               backendAzureRmKey: '$(bkstrgkey)'
+          
               
           - task: TerraformTaskV4@4
             displayName: plan
