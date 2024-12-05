@@ -62,6 +62,7 @@ stages:
               provider: 'azurerm'
               command: 'plan'
               environmentServiceNameAzureRM: 'MYFIRSTSERVICECONNECTION'
+              workingDirectory: 'VNET'
           
           - task: TerraformTaskV4@4
             displayName: apply
@@ -69,6 +70,7 @@ stages:
               provider: 'azurerm'
               command: 'apply'
               environmentServiceNameAzureRM: 'MYFIRSTSERVICECONNECTION'
+              workingDirectory: 'VNET'
 
 
 
