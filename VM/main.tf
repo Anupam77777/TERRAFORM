@@ -64,10 +64,6 @@ resource "azurerm_virtual_machine" "main" {
     admin_password = "P@ssw0rd1234!"
   }
 
-  os_profile_windows_config {
-    enable_automatic_updates = true
-  }
-
   tags = {
     environment = "staging"
   }
