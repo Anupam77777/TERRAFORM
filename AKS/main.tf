@@ -1,4 +1,22 @@
 #In Azure, all infrastructure elements such as virtual machines, storage, and our Kubernetes cluster need to be attached to a resource group.
+terraform {
+  required_providers {
+    azurerm = {
+      source  = "hashicorp/azurerm"
+      version = "3.15.00"
+    }
+  }
+  backend "azurerm" {
+    resource_group_name = var.bkstrgrg
+    storage_account_name = var.bkstrg
+    container_name = var.bkcontainer
+    key = var.bkstrgkey
+  }
+}
+
+provider "azurerm" {
+  features {}
+}
 
 resource "azurerm_resource_group" "aks-rg" {
   name     = var.resource_group_name
