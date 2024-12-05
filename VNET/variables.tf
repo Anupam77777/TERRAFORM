@@ -13,13 +13,13 @@ variable "bkstrg" {
 variable "bkcontainer" {
   type = string
   description = "The container name for the backend config"
-  default = "tfstate"
+  default = "terraformstate"
 }
 
 variable "bkstrgkey" {
   type = string
   description = "The access key for the storage account"
-  default = "devpipline.terraform.tfstate"
+  default = "terraform.tfstate"
 }
 
 variable "resourcegroup_name" {
@@ -71,15 +71,6 @@ variable "subnets" {
       address_prefixes = ["10.211.3.0/24"]
     }
     # The name must be AzureBastionSubnet
-    bastion_subnet = {
-      name             = "AzureBastionSubnet"
-      address_prefixes = ["10.211.250.0/24"]
-    }
   }
 }
 
-variable "bastionhost_name" {
-  type        = string
-  description = "The name of the basion host"
-  default     = "BastionHost"
-}
