@@ -64,6 +64,12 @@ resource "azurerm_virtual_machine" "main" {
     admin_password = "P@ssw0rd1234!"
   }
 
+  os_profile_windows_config {
+    provision_vm_agent        = true
+    enable_automatic_updates  = true
+    time_zone                 = "Pacific Standard Time"
+  }
+
   tags = {
     environment = "staging"
   }
