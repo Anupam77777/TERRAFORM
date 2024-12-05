@@ -51,6 +51,8 @@ resource "azurerm_virtual_machine" "main" {
     version   = "latest"
   }
 
+  hyper_v_generation = "V2"
+
   storage_os_disk {
     name              = "${var.prefix}-${each.value.name}-osdisk"
     caching           = "ReadWrite"
