@@ -23,12 +23,13 @@ resource "azurerm_resource_group" "az_rg" {
 }
 
 resource "azurerm_network_interface" "main" {
-  name                = var.nic_name
-  location            = var.location
-  resource_group_name = var.existing_resource_group_name
+  for_each = var.vms
+  name                = "${var.prefix}-nic-${each.value.name}"
+  location            = azurerm_resource_group.az_rg.location
+  resource_group_name = azurerm_resource_group.az_rg.name
 
   ip_configuration {
-    name                          = "ipconfig1"
+    name                          = "ipconfig-${each.value.name}"
     subnet_id                     = data.azurerm_subnet.example_subnet.id
     private_ip_address_allocation = "Dynamic"
   }
