@@ -6,8 +6,8 @@ pool:
 variables:
   bkstrgrg: 'MYFIRSTRG'
   bkstrg: 'backendstorageterra'
-  bkcontainer: 'tfstate'
-  bkstrgkey: 'devpipline.terraform.tfstate'
+  bkcontainer: 'terraformstate'
+  bkstrgkey: 'terraform.tfstate'
 
 stages:
   - stage: tfvalidate
