@@ -47,7 +47,7 @@ resource "azurerm_virtual_machine" "main" {
   storage_image_reference {
     publisher = "MicrosoftWindowsServer"
     offer     = "WindowsServer"
-    sku       = "2022-Datacenter-gen2"
+    sku       = "2022-datacenter-gensecond"
     version   = "latest"
   }
 
