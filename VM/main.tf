@@ -47,11 +47,9 @@ resource "azurerm_virtual_machine" "main" {
   storage_image_reference {
     publisher = "MicrosoftWindowsServer"
     offer     = "WindowsServer"
-    sku       = "2019-Datacenter"
+    sku       = "2022-Datacenter-Gen2"
     version   = "latest"
   }
-
-  hyper_v_generation = "V2"
 
   storage_os_disk {
     name              = "${var.prefix}-${each.value.name}-osdisk"
