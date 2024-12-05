@@ -38,9 +38,9 @@ variable "vms" {
     sku  = string
   }))
   default = {
-    "vm1" = { name = "vm1", sku = "Standard_DS1_v2" }
-    "vm2" = { name = "vm2", sku = "Standard_DS2_v2" }
-    "vm3" = { name = "vm3", sku = "Standard_DS3_v2" }
+    "vm1" = { name = "vm1", sku = "Standard_D2as_v6" }
+    "vm2" = { name = "vm2", sku = "Standard_D2ads_v6"}
+    "vm3" = { name = "vm3", sku = "Standard_D2als_v6" }
   }
 }
 
