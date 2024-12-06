@@ -71,6 +71,6 @@ stages:
             displayName: apply
             inputs:
               provider: 'azurerm'
-              command: 'destroy'
+              command: 'apply'
               environmentServiceNameAzureRM: 'MYFIRSTSERVICECONNECTION'
               workingDirectory: 'AKS'
