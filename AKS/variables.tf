@@ -1,3 +1,27 @@
+variable "bkstrgrg" {
+  type        = string
+  description = "The name of the backend storage account resource group"
+  default     = "MYFIRSTRG"
+}
+
+variable "bkstrg" {
+  type        = string
+  description = "The name of the backend storage account"
+  default     = "backendstorageterra"
+}
+
+variable "bkcontainer" {
+  type = string
+  description = "The container name for the backend config"
+  default = "terraformstate"
+}
+
+variable "bkstrgkey" {
+  type = string
+  description = "The access key for the storage account"
+  default = "terraform.tfstateAKS"
+
+
 variable "resource_group_name" {
   type        = string
   description = "RG name in Azure"
