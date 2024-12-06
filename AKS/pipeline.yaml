@@ -21,8 +21,10 @@ steps:
     backendAzureRmStorageAccountName: 'backendstorageterra'
     backendAzureRmContainerName: 'terraformstate'
     backendAzureRmKey: 'aks.tfstate'
+    workingDirectory: 'AKS'
 - task: TerraformTaskV4@4
   inputs:
     provider: 'azurerm'
     command: 'plan'
     environmentServiceNameAzureRM: 'MYFIRSTSERVICECONNECTION'
+    workingDirectory: 'AKS'
