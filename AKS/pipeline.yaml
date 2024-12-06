@@ -9,22 +9,20 @@ pool:
   vmImage: ubuntu-latest
 
 steps:
-- task: TerraformCLI@0
-  displayName: Terraform Init
+- task: TerraformInstaller@1
   inputs:
+    terraformVersion: 'latest'
+- task: TerraformTaskV4@4
+  inputs:
+    provider: 'azurerm'
     command: 'init'
-    allowTelemetryCollection: true
-
-- task: TerraformCLI@0
-  displayName: Terraform Plan
+    backendServiceArm: 'MYFIRSTSERVICECONNECTION'
+    backendAzureRmResourceGroupName: 'MYFIRSTRG'
+    backendAzureRmStorageAccountName: 'backendstorageterra'
+    backendAzureRmContainerName: 'terraformstate'
+    backendAzureRmKey: 'aks.tfstate'
+- task: TerraformTaskV4@4
   inputs:
+    provider: 'azurerm'
     command: 'plan'
-    environmentServiceName: 'MYFIRSTSERVICECONNECTION'
-    allowTelemetryCollection: false
-
-- task: TerraformCLI@0
-  displayName: Terraform Apply
-  inputs:
-    command: 'apply'
-    environmentServiceName: 'MYFIRSTSERVICECONNECTION'
-    allowTelemetryCollection: true
+    environmentServiceNameAzureRM: 'MYFIRSTSERVICECONNECTION'
