@@ -10,13 +10,13 @@ vnetcidr = ["10.0.0.0/24"]
 
 subnetcidr = ["10.0.0.0/25"]
 
-keyvault_rg = "aksdemo-rg"
+keyvault_rg = "MYFIRSTRG"
 
 keyvault_name = "anuaksvault"
 
 azure_region = "EastUS"
 
-resource_group = "MYFIRSTRG"
+resource_group = "aksdemo-rg"
 
 cluster_name = "akscluster"
 
