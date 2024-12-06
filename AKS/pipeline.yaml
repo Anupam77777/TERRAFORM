@@ -28,3 +28,10 @@ steps:
     command: 'plan'
     environmentServiceNameAzureRM: 'MYFIRSTSERVICECONNECTION'
     workingDirectory: 'AKS'
+
+- task: TerraformTaskV4@4
+  inputs:
+    provider: 'azurerm'
+    command: 'apply'
+    environmentServiceNameAzureRM: 'MYFIRSTSERVICECONNECTION'
+    workingDirectory: 'AKS'
