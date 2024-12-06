@@ -31,20 +31,24 @@ resource "azurerm_kubernetes_cluster" "az_kc" {
 
   
 
-  agent_pool_profile {
+  default_node_pool {
     name       = var.az_kc_default_node_pool_name
     count      = 2
     vm_size    = "Standard_D4s_v3"
     os_type    = "Linux"
     vm_set_type = "VirtualMachines"
   }
-  
+
   identity {
     type = var.az_kc_identity_type
   }
 
   tags = {
     Environment = "Production"
+  }
+
+  network_profile {
+    network_plugin    = "kubenet"
   }
 }
 
