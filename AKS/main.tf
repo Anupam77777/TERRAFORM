@@ -33,10 +33,10 @@ resource "azurerm_kubernetes_cluster" "az_kc" {
 
   default_node_pool {
     name       = var.az_kc_default_node_pool_name
-    count      = 2
+    node_count      = 2
     vm_size    = "Standard_D4s_v3"
     os_type    = "Linux"
-    vm_set_type = "VirtualMachines"
+    type       = "VirtualMachineScaleSets"
   }
 
   identity {
