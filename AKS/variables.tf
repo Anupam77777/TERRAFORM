@@ -21,7 +21,7 @@ variable "bkstrgkey" {
   description = "The access key for the storage account"
   default = "terraform.tfstateAKS"
 
-
+}
 variable "resource_group_name" {
   type        = string
   description = "RG name in Azure"
