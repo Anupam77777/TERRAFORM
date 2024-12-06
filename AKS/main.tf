@@ -29,12 +29,16 @@ resource "azurerm_kubernetes_cluster" "az_kc" {
   resource_group_name = azurerm_resource_group.az_rg.name
   dns_prefix          = "exampleaks1"
 
-  default_node_pool {
-    name       = var.az_kc_default_node_pool_name
-    node_count = 1
-    vm_size    = "Standard_D2_v2"
-  }
+  
 
+  agent_pool_profile {
+    name       = var.az_kc_default_node_pool_name
+    count      = 2
+    vm_size    = "Standard_D4s_v3"
+    os_type    = "Linux"
+    vm_set_type = "VirtualMachines"
+  }
+  
   identity {
     type = var.az_kc_identity_type
   }
