@@ -14,7 +14,7 @@ keyvault_rg = "MYFIRSTRG"
 
 keyvault_name = "anuaksvault"
 
-azure_region = "EastUS"
+azure_region = "australiaeast"
 
 resource_group = "aksdemo-rg"
 
